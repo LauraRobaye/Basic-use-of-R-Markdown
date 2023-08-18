@@ -71,5 +71,31 @@ On commence un tableau en insérant une barre verticale |. Cette barre va sépar
 **Formules mathématiques**    
 La syntaxe utilisée dans R pour écrire des formules mathématiques est LaTeX. On peut distinguer les formules en ligne des formules display. Les formules en ligne peuvent être insérées dans le texte et on les délimite en entourant l'expression par les syboles dollar $formule$; pour insérer des formules qui se trouveront dans un bloc à part, on entoure la formule par deux symboles dollar de chaque côté $$formule$$. La syntaxe LaTeX est synthétisée à l'adresse suivante: <http://tug.ctan.org/info/undergradmath/undergradmath.pdf>
 
-**Insérer du code**    
+**Insérer du code informatif**    
+Le code à titre d'exemple peut être intégré dans un fichier Markdown de deux façons différentes. Les codes en ligne sont insérés directement dans le texte et sont écrits entre deux accents graves ` `. si on veut avoir une coloration syntaxiques du code, il faut préciser de quel langage il s'agit entre crochets et en commençant avec un point {.langage} après l'accent grave de fin du code. Les blocs de code sont entourés par trois accents graves ``` de part et d'autre du code. Il est aussi possible de spécifier le langage en l'inscrivant juste après les trois premiers accents graves.
+
+**Insérer du code éxécuté**    
+Pour insérer du code qui sera exécuté, on procède différemment. Il est cependant toujours possible de l'intégrér en ligne dans le texte ou en blocs (= chunks). Pour les codes exécutés en ligne, on les entoure avec an accent grave avant et après mais on ajoute le langage directement après le premier accent grave `r code`. Pour insérer un chunk on entoure aussi le code de trois accents graves avant et après le code mais on indique le langage entre crochets juste après les trois premiers accents graves ```{r} code ```. Le code ainsi que sa sortie seront visibles par défaut dans le fichier R Markdown mais on peut en cacher l'un ou l'autre si on veut avec les options des chunks.
+
+**Options des chunks**     
+De nombreuses options s'appliquent aux chunks et sont listées dans la documentation du package knitr indispensable lorsque l'on travaille avec un document R Markdown. Les options sont indiquées au début du chunk, entre le langage et le code à proprement parler.
+
+| Option | Effet |
+|:----:|:----:|
+| include = FALSE  |  Le code et les résultats n'apparaissent pas dans le document  |
+| echo = FALSE  |  Les résultats apparaissent mais le code n'est pas montré  |
+|  eval = FALSE | Le code apparait mais pas les résultats   |
+| message = FALSE  |  Les messages générés ne sont pas affichés dans le document  |
+|  warning = FALSE |  Les messages d'avertissement ne sont pas affichés dans le document  |
+| fig.width = "XX", figh.height = "XXX"  |  L'image/graphique produit prendra les dimentions indiquées en pouces  |
+| out.width = '75%'  |  L'image/graphique produit prend la proportion indiquée par rapport à la taille de génération basique  |
+
+On peut décider de paramétrer l'ensemble des chunks d'un document en fixant dans un chunk de départ une liste knitr::opts_chunk juste en-dessous de l'en-tête YAML.
+Si après ce paramétrage on veut que certains codes se comportent différemment, on peut toujours spécifier ces options au niveau des codes d'intérêt.
+
+**Bibliographie**     
+Généralement on insère une référence dans le texte qui renvoit à un fichier contenant la liste détaillée des références citées. Plusieurs étapes doivent être suivies:
+a. Créer le fichier qui contient toutes les références utilisées
+b. Lier ce fichier au document Markdown dans lequel on travaille
+c. Insérer les références dans le document texte   
 

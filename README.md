@@ -166,6 +166,7 @@ On insère une note de bas de page avec les crochets `[]`, un accent circonflèx
 On dit ensuite ce qu'on veut noter en bas de page:
 
 ```[^1]: ma note de bas de page contient ce texte.```
+
 [^1]: ma note de bas de page contient ce texte.
 
 Ce qui est entre les crochets apparaitra en bas de page avant la note. On peut écrire du code et/ou plusieurs paragraphes en note de bas de page.
@@ -292,7 +293,7 @@ g1 /
 (g2 | g3 | g4)
 ```
 
-## 2.20. Bibliographie 
+## 2.20. Insérer une bibliographie 
 Généralement on insère une référence dans le texte qui renvoit à un fichier contenant la liste détaillée des références citées. Plusieurs étapes doivent être suivies:
 a. Créer le fichier qui contient toutes les références utilisées
 b. Lier ce fichier au document Markdown dans lequel on travaille

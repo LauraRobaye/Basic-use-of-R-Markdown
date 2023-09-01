@@ -3,8 +3,23 @@ Les codes les plus utiles pour prendre R Markown en main et réaliser de beaux d
 
 # 1. En-tête YAML
 
-## 1.1.Table des matières    
-Sous "output" dire toc: yes ; toc_depth: 4 (jusqu'à quel niveau de titre on veut prendre en compte dans la table des matières) ; toc_float: true (elle est insérée comme objet flottant visible en permanence dans le document, pour un document HTML, pas possible pour un pdf).
+## 1.1.Table des matières
+Quand on spécifie le ou les output du document, on dit qu'on veut une table des matières avec la ligne `toc: true`. On peut dire jusqu'à quel niveau de titre on veut voir apparaitre dans la table des matières avec la ligne `toc_depth: 4`si on veut inclure jusqu'au titre de quatrième niveau.
+Pour les outputs de type HTML, on peut vouloir produire une table des matières "flottante" qui est visible en permanence dans le document. Pour cela on utilise la ligne `toc_float: true`
+
+```
+---
+title: "Mon document"
+output:
+  pdf_document:
+    toc: true
+    toc_depth: 4
+  html_document:
+    toc: true
+    toc_depth: 4
+    toc_float: true
+---
+```
 
 ## 1.2. Numérotation automatique des titres du document
 Utiliser l'option `number_sections`dans l'en-tête YAML (valable pour les documents HTML et les PDF).
@@ -17,8 +32,10 @@ output:
     number_sections: TRUE
 ---
 ```
+
 ## 1.3. Changer le thème du document HTML
-Différents thèmes peuvent être appliqués à un document HTML. On peut en trouver certain à l'adresse suivante <https://bootswatch.com> ou plus généralement en cherchant des thèmes Bootstrap gratuits. Citons les thèmes suivants: default, bootstrap, cerulean, cosmo, darkly, flatly, journal, lumen, paper, readable, sandstone, simplex, spacelab, united, yeti. Les highlight suivants sont disponibles: default, tango, pygments, kate, monochrome, espresso, zenburn, haddock, breezedark, textmate (<https://bookdown.org/yihui/rmarkdown/html-document.html>).
+Différents thèmes peuvent être appliqués à un document HTML. On peut en trouver certain à l'adresse suivante <https://bootswatch.com> ou plus généralement en cherchant des thèmes *Bootstrap* gratuits. Citons les thèmes suivants: default, bootstrap, cerulean, cosmo, darkly, flatly, journal, lumen, paper, readable, sandstone, simplex, spacelab, united, yeti. Les highlight suivants sont disponibles: default, tango, pygments, kate, monochrome, espresso, zenburn, haddock, breezedark, textmate (<https://bookdown.org/yihui/rmarkdown/html-document.html>).
+
 Pour cela il faut charger la librairie bootstrap, ce qui a pour conséquence d'augmenter la taille du fichier. Il est possible d'utiliser `html_vignette`pour réduire la taille du package utilisé mais l'output HTML est visuellement moins beau que si on utilise `html_document`.
 
 ```
@@ -30,7 +47,7 @@ output:
 ---
 ```
 
-Il est aussi possible d'utiliser le package prettydoc qui va permettre de générer un fichier assez léger mais quand même visuellement assez agréable. On spécifie alors que l'output du document est un prettydoc et non plus un HTML et on spécifie le thème et le highlight juste après. La plupart des thèmes utilisés est semblables au point précédant.
+Il est aussi possible d'utiliser le package `prettydoc` qui va permettre de générer un fichier assez léger mais quand même visuellement assez agréable. On spécifie alors que l'output du document est un prettydoc et non plus un HTML et on spécifie le thème et le highlight juste après. Pour la plupart, les thèmes utilisés sont semblables à ceux cités précédemment.
 
 ```
 ---
@@ -41,10 +58,11 @@ output:
     highlight: github
 ---
 ```
+
 ## 1.4. Produire un document en PDF qui a une mise en page HTML et CSS
 On peut utiliser le package `pagedown`. La documentation complète du package est disponible à l'adresse suivante <https://pagedown.rbind.io>. Il est possible de réaliser de nombreux types de documents avec ce package (CV, article, poster, thèses...). Un appercu des possibilités est disponible à l'adresse suivante <https://github.com/rstudio/pagedown>.
 
-On doit alors indiquer ceci dans l'en-tête YAML
+On doit alors indiquer ceci dans l'en-tête YAML:
 
 ```
 ---
@@ -57,7 +75,7 @@ output:
 # 2. Corps du texte
 
 ## 2.1. Insérer une citation
-Insérer une citation dans un bloc: préceder par un chevron > en début de ce que l'on veut citer. On place un chevron pour cahque paragraphe désiré au sein de la citation.
+Pour insérer une citation dans un bloc, il faut la préceder par un chevron > en début de ce que l'on veut citer. On place un chevron pour chaque paragraphe désiré au sein de la citation.
 
 ``` {r}
 > Ceci est une citation
@@ -70,14 +88,14 @@ Insérer une citation dans un bloc: préceder par un chevron > en début de ce q
 > --- Laura Robaye
 
 ## 2.2. Saut de ligne et paragraphes
-Le saut de ligne s'effectue en finissant la ligne par deux espaces
-Pour commencer un nouveau pargraphe (et aller à la ligne suivante), il faut finir la ligne en appuyant deux fois sur *ENTER*
+Le saut de ligne s'effectue en finissant la ligne par deux espaces.
+Pour commencer un nouveau paragraphe (et aller à la ligne suivante), il faut finir la ligne en appuyant deux fois sur *ENTER*
 
 ## 2.3. Tracer une ligne horizontale  
 
 Pour un document en PDF:
 
-Ligne sur toute la largeur avec une des deux commandes suivantes
+Ligne sur toute la largeur avec une des deux commandes suivantes:
 
 ``` 
 \rule{1\linewidth}{0.5pt}
@@ -85,7 +103,7 @@ ou
 --------------------------s
 ```
 
-Ligne centrée mais qui ne fait pas toute la largeur
+Ligne centrée mais qui ne fait pas toute la largeur:
 
 ```
 ***
@@ -105,20 +123,20 @@ ou
 
 ## 2.4. Mettre du texte en couleur
 
-Dans un document PDF
+Dans un document PDF:
 
 ```La mer est \textcolor{blue}{bleue} et le soleil est \textcolor{yellow}{jaune}.```
 
-Dans un document HTML
+Dans un document HTML:
 
 ```La mer est <span style="color: blue;">bleue</span> et le soleil est <span style="color: yellow;">jaune</span>.```
 
 ## 2.5. Ligne vide
-Pour un document en PDF, saisir la commande suivante
+Pour un document en PDF, saisir la commande suivante:
 
 `\newline`
 
-Pour un document HTML, on peut utiliser la balise `br` d'un des deux façons suivantes
+Pour un document HTML, on peut utiliser la balise `br` d'un des deux façons suivantes:
 
 ```
 <br/>

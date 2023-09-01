@@ -181,7 +181,7 @@ Pour une liste non ordonnée avec des puces, on précède chaque item de `-` ou 
 On peut ajouter une liste dans une liste en la faisant précéder d'un taquet de tabulation (4 espaces). Si on veut ajouter un paragraphe au sein d'une liste, il faut insérer un taquet de tabulation pour conserver la mise en forme de la liste. Il faut également insérer une ligne vide avant (on peut aussi le faire après mais ça n'est pas obligatoire) le paragraphe.
 
 ## 2.12. Ajouter une image
-Il faut insérer un point d'exclamation `!` puis des crochets ``[]` dans lesquels on note le titre de l'image. On ajoute des parenthèses `()` qui contiennent le chemin vers l'image et dans cette parenthèse on peut ajouter entre guillemets "" une descritption qui sera visible en survolant l'image avec la souris. On peut spécifier la taille de l'image entre les parenthèses {}.
+Il faut insérer un point d'exclamation `!` puis des crochets `[]` dans lesquels on note le titre de l'image. On ajoute des parenthèses `()` qui contiennent le chemin vers l'image et dans cette parenthèse on peut ajouter entre guillemets "" une descritption qui sera visible en survolant l'image avec la souris. On peut spécifier la taille de l'image entre les parenthèses {}.
 
 `! [Une maison rouge](~/images/maison.png "Une maison rouge le long de la route") {width="400px"}`{.R}
 

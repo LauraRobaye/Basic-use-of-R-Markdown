@@ -38,7 +38,7 @@ Insérer une citation dans un bloc: préceder par un chevron > en début de ce q
 > --- Laura Robaye
 
 **Tracer une ligne horizontale**     
-Taper 3 tirets --- puis aller directement à la ligne pour tracer une ligne horizontale.
+Taper 3 étoiles *** puis aller directement à la ligne pour tracer une ligne horizontale.
 
 **Liens hypertexte**    
 Il doit inclure deux éléments: le texte sur lequel on va cliquer et l'adresse à laquelle se trouve ce lien. Le texte est entouré par des crochets [] et l'adresse par des parenthèses ().
@@ -78,19 +78,24 @@ Le code à titre d'exemple peut être intégré dans un fichier Markdown de deux
 Pour insérer du code qui sera exécuté, on procède différemment. Il est cependant toujours possible de l'intégrér en ligne dans le texte ou en blocs (= chunks). Pour les codes exécutés en ligne, on les entoure avec an accent grave avant et après mais on ajoute le langage directement après le premier accent grave `r code`. Pour insérer un chunk on entoure aussi le code de trois accents graves avant et après le code mais on indique le langage entre crochets juste après les trois premiers accents graves ```{r} code ```. Le code ainsi que sa sortie seront visibles par défaut dans le fichier R Markdown mais on peut en cacher l'un ou l'autre si on veut avec les options des chunks.
 
 **Options des chunks**     
-De nombreuses options s'appliquent aux chunks et sont listées dans la documentation du package knitr indispensable lorsque l'on travaille avec un document R Markdown. Les options sont indiquées au début du chunk, entre le langage et le code à proprement parler.
+De nombreuses options s'appliquent aux chunks et sont listées dans la documentation du package knitr indispensable lorsque l'on travaille avec un document R Markdown. Les options sont indiquées au début du chunk, entre le langage et le code à proprement parler. Une liste des options des chunks est disponible ici: <https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf>
 
 | Option | Effet |
 |:----:|:----:|
 | include = FALSE  |  Le code et les résultats n'apparaissent pas dans le document  |
-| echo = FALSE  |  Les résultats apparaissent mais le code n'est pas montré  |
-|  eval = FALSE | Le code apparait mais pas les résultats   |
+| echo = FALSE  |  Les résultats apparaissent mais le code n'est pas montré dans le document  |
+|  eval = FALSE | Le code apparait mais n'est pas exécuté dans le document   |
 | message = FALSE  |  Les messages générés ne sont pas affichés dans le document  |
+| error = FALSE | Aucun message d'erreur généré par le code ne sera affiché dans le document |
 |  warning = FALSE |  Les messages d'avertissement ne sont pas affichés dans le document  |
+| highlight = TRUE | Le code sera mis en évidence dans le document généré selon différents styles disponibles ("tango", "pygments", "kate", "zenburn"... |
+| fig.align = "default" | Alligne les graphiques dans les document par défaut. On peut les aligner à droite, gauche au les centrer avec "right", "left" ou "center" |
+| fig.ext = "png" | L'output de la figure sera en format png (on peut choisir un autre format) |
+|fig.show="hide"| Les graphiques n'apparaissent pas dans le document|
 | fig.width = "XX", figh.height = "XXX"  |  L'image/graphique produit prendra les dimentions indiquées en pouces  |
 | out.width = '75%'  |  L'image/graphique produit prend la proportion indiquée par rapport à la taille de génération basique  |
 
-On peut décider de paramétrer l'ensemble des chunks d'un document en fixant dans un chunk de départ une liste knitr::opts_chunk juste en-dessous de l'en-tête YAML.
+On peut décider de paramétrer l'ensemble des chunks d'un document en fixant dans un chunk de départ une liste knitr::opts_chunk$set juste en-dessous de l'en-tête YAML.
 Si après ce paramétrage on veut que certains codes se comportent différemment, on peut toujours spécifier ces options au niveau des codes d'intérêt.
 
 **Bibliographie**     

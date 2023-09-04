@@ -293,7 +293,7 @@ g1 /
 (g2 | g3 | g4)
 ```
 
-## 2.20. Insérer une bibliographie 
+# 3. Insérer une bibliographie 
 Généralement on insère une référence dans le texte qui renvoit à un fichier contenant la liste détaillée des références citées. Plusieurs étapes doivent être suivies:
 a. Créer le fichier qui contient toutes les références utilisées
 b. Lier ce fichier au document Markdown dans lequel on travaille

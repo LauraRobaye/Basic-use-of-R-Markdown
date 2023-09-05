@@ -207,7 +207,7 @@ On commence un tableau en insérant une barre verticale `|`. Cette barre va sép
 
 ## 2.14. Formules mathématiques
 La syntaxe utilisée dans R pour écrire des formules mathématiques est LaTeX. On peut distinguer les formules en ligne des formules display. Les formules en ligne peuvent être insérées dans le texte et on les délimite en entourant l'expression par les syboles dollar `$formule$` $formule$.
-Pour insérer des formules qui se trouveront dans un bloc à part, on entoure la formule par deux symboles dollar de chaque côté `$$formule$$` $$formule$$  Une courte synthèse de la syntaxe LaTeX est disponible à l'adresse suivante: <http://tug.ctan.org/info/undergradmath/undergradmath.pdf>
+Pour insérer des formules qui se trouveront dans un bloc à part, on entoure la formule par deux symboles dollar de chaque côté `$$formule$$` $$formule$$  Une courte synthèse de la syntaxe LaTeX est disponible à l'adresse suivante: <http://tug.ctan.org/info/undergradmath/undergradmath.pdf> et plus en détail: <https://en.wikibooks.org/wiki/LaTeX/Mathematics>
 
 ## 2.15. Insérer du code informatif
 Le code à titre d'exemple peut être intégré dans un fichier Markdown de deux façons différentes. Les codes en ligne sont insérés directement dans le texte et sont écrits entre deux accents graves . si on veut avoir une coloration syntaxiques du code, il faut préciser de quel langage il s'agit entre crochets et en commençant avec un point `{.langage}` après l'accent grave de fin du code. Les blocs de code sont entourés par trois accents graves de part et d'autre du code. Il est aussi possible de spécifier le langage en l'inscrivant juste après les trois premiers accents graves.
